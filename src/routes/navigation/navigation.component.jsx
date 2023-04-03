@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 import './navigation.styles.scss';
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
-import SignIn from '../sign-in/singin.component';
+import Authentication from '../authentication/authentication.component';
 
 const Navigation = () => {
     return (
@@ -16,7 +16,7 @@ const Navigation = () => {
             <Link className='nav-link' to='/shop'>
               SHOP
             </Link>
-            <Link path='signIn' to='/sign-in' element={ <SignIn /> }>
+            <Link className='nav-link' path='auth' to='/auth' element={ <Authentication /> }>
               SIGN IN
               </Link>
             </div>

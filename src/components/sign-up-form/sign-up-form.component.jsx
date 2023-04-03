@@ -41,13 +41,11 @@ const SignUpForm = () => {
             resetFormFields();
         }
         catch(error) {
-            if(error.code == 'auth/email-already-in-use') {
+            if(error.code === 'auth/email-already-in-use') {
                 alert('Email is already used');
             }
             console.log('Use creation encountered an error', error);
         }
-
-        console.log(displayName, email, password, confirmPassword);
     };
 
     const handleChange = (event) => {
@@ -58,7 +56,7 @@ const SignUpForm = () => {
 
     return(
         <div className='sign-up-container'>
-            <h2>Don't have an account?</h2>
+            <h2>I do not have an account</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={ handleSubmit }>
                 <FormInput 
