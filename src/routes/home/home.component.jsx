@@ -1,5 +1,4 @@
-import CategoryData from '../../components/category-list/category-data.component';
-
+import CategoryData from '../../components/shop/category-list/category-data.component';
 const Home = () => {
   return (
     <CategoryData />
