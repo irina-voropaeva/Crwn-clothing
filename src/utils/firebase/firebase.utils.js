@@ -9,7 +9,16 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc, getDocs, collection, writeBatch, query } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  getDocs,
+  collection,
+  writeBatch,
+  query,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA6kvxTbwtEyqneOwQmb6sQpS9h3wI5tzQ",
@@ -35,7 +44,10 @@ export const signInWithGoogleRedirect = () =>
 
 export const db = getFirestore();
 
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
   const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
 
@@ -53,13 +65,13 @@ export const getCategoriesAndDocuments = async () => {
   const querySnapshot = await getDocs(q);
 
   const categories = querySnapshot.docs.reduce((accumulator, docSnapshot) => {
-      const { title, items } = docSnapshot.data();
-      accumulator[title.toLowerCase()] = items;
+    const { title, items } = docSnapshot.data();
+    accumulator[title.toLowerCase()] = items;
 
-      return accumulator;
-    }, {});
+    return accumulator;
+  }, {});
 
-    return categories;
+  return categories;
 };
 
 export const createUserDocumentFromAuth = async (
