@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Crown Clothing
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You can check the app deployed on the [Netlify](https://crwn-clothing-i-vvrpv.netlify.app/shop/hats).
 
 ## Available Scripts
 
