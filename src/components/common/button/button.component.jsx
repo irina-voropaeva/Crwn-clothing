@@ -10,12 +10,12 @@ export const BUTTON_TYPE_CLASSES = {
   base: "base",
 };
 
-const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
+const getButton = (buttontype = BUTTON_TYPE_CLASSES.base) =>
   ({
     [BUTTON_TYPE_CLASSES.base]: BaseButton,
     [BUTTON_TYPE_CLASSES.google]: GoogleSignInButton,
     [BUTTON_TYPE_CLASSES.inverted]: InvertedButton,
-  }[buttonType]);
+  }[buttontype]);
 
 const Button = ({ children, buttonType, ...otherProps }) => {
   const ButtonComponent = getButton(buttonType);
@@ -23,7 +23,7 @@ const Button = ({ children, buttonType, ...otherProps }) => {
     <ButtonComponent
       as="button"
       type="button"
-      buttonType={buttonType}
+      buttontype={buttonType}
       {...otherProps}
     >
       {children}
